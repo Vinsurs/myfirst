@@ -42,7 +42,7 @@ function selectSort(arr,isDesc=false){
 		for(var j=i-1+1;j<arr.length;j++){
 			if(arr[i-1]>arr[j]){
 				var temp=arr[j];
-				arr[j]=arr[i-1];s
+				arr[j]=arr[i-1];
 				arr[i-1]=temp;
 			}
 		}
