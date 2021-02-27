@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>testrem</title>
+    <style media="screen">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 0.16rem;
+      }
+      .box {
+        background-color: skyblue;
+        width: 3.75rem;
+        height: 1rem;
+      }
+    </style>
+    <script>
+      (function () {
+        function resize() {
+          // 指定100像素为1rem,以iphone6为基准750px 对应7.5rem
+          let baseValue = 100;
+          let designWidth = 750;
+          let w = designWidth / baseValue;
+          let docW =
+            document.documentElement.clientWidth || document.body.clientWidth;
+          let fontSize = docW / w;
+          document.documentElement.style.fontSize = fontSize + 'px';
+        }
+        window.onresize = resize;
+        document.addEventListener('DOMContentLoaded', resize);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="box">box innertext.</div>
+  </body>
+</html>

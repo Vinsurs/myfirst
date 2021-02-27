@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>toggle</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 400px;
+        height: 400px;
+        margin: 100px auto;
+        position: relative;
+      }
+      .container .list {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        overflow: hidden;
+      }
+      .container .list li {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+      }
+      .container .page {
+        margin: 0;
+        overflow: hidden;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        text-align: right;
+      }
+      .container .page a {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+      }
+      .container .page a:active {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="list">
+        <li id="1" style="background: chartreuse"></li>
+        <li id="2" style="background: chocolate"></li>
+        <li id="3" style="background: crimson"></li>
+        <li id="4" style="background: darkmagenta"></li>
+      </ul>
+      <p class="page">
+        <a href="#1"></a>
+        <a href="#2"></a>
+        <a href="#3"></a>
+        <a href="#4"></a>
+      </p>
+    </div>
+    <script>
+      let aA = document.querySelectorAll(".container .page a");
+      aA.item(0).style.backgroundColor = "aqua";
+      Array.from(aA).forEach(v => {
+        v.onclick = function() {
+          Array.from(aA).forEach(a => {
+            a.style.backgroundColor = "blue";
+          });
+          this.style.backgroundColor = "aqua";
+        };
+      });
+    </script>
+  </body>
+</html>

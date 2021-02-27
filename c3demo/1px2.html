@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>1px物理像素</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #div1 {
+        width: 16rem;
+        height: 1px;
+        margin-top: 3rem;
+        background: blue;
+      }
+      @media only screen and (-webkit-device-pixel-ratio: 2) {
+        #div1 {
+          transform: scaleY(0.5);
+        }
+      }
+      @media only screen and (-webkit-device-pixel-ratio: 3) {
+        #div1 {
+          transform: scaleY(0.333333333);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1"></div>
+    <script>
+      (function() {
+        // rem 适配
+        let w = document.documentElement.clientWidth / 16;
+        let styleNode = document.createElement("style");
+        styleNode.innerHTML = "html{font-size:" + w + "px !important;}";
+        document.head.appendChild(styleNode);
+      })();
+    </script>
+  </body>
+</html>

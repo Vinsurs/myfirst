@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>drag and drop</title>
+    <style>
+      ul {
+        overflow: hidden;
+      }
+      ul li {
+        width: 60px;
+        height: 60px;
+        list-style: none;
+        line-height: 60px;
+        text-align: center;
+        margin: 20px;
+        float: left;
+        border: 1px solid black;
+      }
+      .dropper {
+        width: 80px;
+        height: 100px;
+        border: 1px solid black;
+        background: grey;
+        text-align: center;
+        line-height: 100px;
+        margin: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li draggable="true">白纸条</li>
+      <li draggable="true">大气污染</li>
+      <li draggable="true">易拉罐</li>
+      <li draggable="true">香蕉皮</li>
+      <li draggable="true">其他</li>
+    </ul>
+    <p class="txt"></p>
+    <div class="dropper">垃圾桶</div>
+    <script>
+      let aLi = document.getElementsByTagName("li");
+      let oTxt = document.querySelector(".txt");
+      let oDropper = document.querySelector(".dropper");
+      let oTarget = null; //存放当前拖动的li元素
+      Array.from(aLi).forEach(v => {
+        v.ondragstart = function(ev) {
+          this.style.backgroundColor = "yellow";
+          oTarget = this;
+          ev.dataTransfer.setData("Text", this.innerHTML);
+        };
+        v.ondragend = function(ev) {
+          this.style.backgroundColor = "";
+        };
+      });
+      oDropper.ondragenter = function(ev) {
+        this.style.borderColor = "red";
+      };
+      oDropper.ondragleave = function(ev) {
+        this.style.borderColor = "black";
+      };
+      oDropper.ondragover = function(ev) {
+        ev.preventDefault();
+      };
+      oDropper.ondrop = function(ev) {
+        this.style.borderColor = "black";
+        oTxt.innerHTML = "删除的是:" + ev.dataTransfer.getData("Text");
+        oTarget.parentNode.removeChild(oTarget);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>1px物理像素</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #div1 {
+        width: 16rem;
+        height: 1px;
+        margin-top: 3rem;
+        background: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="div1"></div>
+
+    <script>
+      (function() {
+        let dpr = window.devicePixelRatio || 1;
+        let scale = 1 / dpr;
+
+        // rem 适配
+        let w = (document.documentElement.clientWidth / 16) * dpr;
+        let styleNode = document.createElement("style");
+        styleNode.innerHTML = "html{font-size:" + w + "px !important;}";
+        document.head.appendChild(styleNode);
+
+        // 缩小操作
+        metaDOM = document.querySelector("meta[name='viewport']");
+        metaDOM.content =
+          "width=device-width,initial-scale=" +
+          scale +
+          ",user-scalable=no,minimum-scale=" +
+          scale +
+          ",maximum-scale=" +
+          scale;
+      })();
+    </script>
+  </body>
+</html>

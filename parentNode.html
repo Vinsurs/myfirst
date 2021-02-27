@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="qq邮箱授权码：xsklcnjicrzjdhfi">
+</head>
+<body>
+    <button onclick="append()">append</button>
+    <button onclick="prepend()">prepend</button>
+    <button onclick="before()">before</button>
+    <button onclick="after()">after</button>
+    <button onclick="replacewith()">replacewith</button>
+    <div id="p">
+        <div id="c">child</div>
+    </div>
+    <script>
+        var p = document.getElementById('p')
+        var c = document.getElementById('c')
+        function append() {
+            var span = document.createElement('span')
+            span.innerText = 'append span'
+            p.append(span)
+        }
+        function prepend() {
+            var span = document.createElement('span')
+            span.innerText = 'prepend span'
+            p.prepend(span)
+        }
+        function before() {
+            var span = document.createElement('span')
+            span.innerText = 'before span'
+            c.before(span)
+        }
+        function after() {
+            var span = document.createElement('span')
+            span.innerText = 'after span'
+            c.after(span)
+        }
+        function replacewith() {
+            var span = document.createElement('span')
+            span.innerText = 'replacewith span'
+            c.replaceWith(span)
+        }
+    </script>
+</body>
+</html>

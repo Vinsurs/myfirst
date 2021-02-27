@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .out {
+            width: 640px;
+            height: 480px;
+            margin: 50px auto;
+            border: 1px solid #cccccc;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="out" onscroll="handleScroll()">
+        <div class="inner">
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p>this is p</p>
+            <p class="loadMore"></p>
+        </div>
+    </div>
+    <script>
+        const out = document.querySelector('.out')
+        const inner = document.querySelector('.inner')
+        const loadMore = document.querySelector('.loadMore')
+        
+        function handleScroll(ev) {
+            // console.log(1,out.getBoundingClientRect().top);
+            console.log(2,inner.getBoundingClientRect().bottom);
+            console.log(2,inner.offsetHeight);
+            // console.log(3,loadMore.getBoundingClientRect().top);
+            if(loadMore.getBoundingClientRect().top<out.offsetHeight+out.offsetTop) {
+                console.log('load-----------');
+            }
+        }
+    </script>
+</body>
+</html>

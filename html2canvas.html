@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #out {
+            width: 900px;
+            height: 500px;
+            overflow-y: auto;
+        }
+        .inner {
+            width: 100%;
+        }
+        p {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="getImg()">图片</button>
+    <div id="out">
+        <div class="inner" id="inner">
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            <div>
+                <img src="./imgs/1525189943-38523.png" alt=""/>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quas nemo repellat accusantium voluptatem, ab omnis reiciendis ducimus vel facilis aliquid non delectus eum tempore consectetur architecto voluptatibus impedit maiores.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="./node_modules/html2canvas/dist/html2canvas.min.js"></script>
+    <script>
+        function saveFile(data, filename) {
+            const saveLink = document.createElementNS(
+            "http://www.w3.org/1999/xhtml",
+            "a"
+            );
+            saveLink.href = data;
+            saveLink.download = filename;
+
+            const event = document.createEvent("MouseEvents");
+            event.initMouseEvent(
+            "click",
+            true,
+            false,
+            window,
+            0,
+            0,
+            0,
+            0,
+            0,
+            false,
+            false,
+            false,
+            false,
+            0,
+            null
+            );
+            saveLink.dispatchEvent(event);
+        }
+        function getImg() {
+            let el = document.getElementById('inner')
+            el.scrollTop = 0
+            html2canvas(el,{
+                width: el.scrollWidth,
+                height: el.scrollHeight,
+                windowWidth: el.scrollWidth,
+                windowHeight: el.scrollHeight,
+            })
+            .then(canvas=>{
+                saveFile(canvas.toDataURL("image/png"),'哈哈哈')
+            }).catch(err=>{
+                console.log('失败',err)
+            })
+        }
+    </script>
+</body>
+</html>

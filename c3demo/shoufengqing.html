@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>shoufengqing</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 400px;
+        margin: 100px auto;
+        padding: 0;
+      }
+      .container .list {
+        width: 100%;
+        margin: 0 auto;
+      }
+      .container .list a {
+        display: block;
+        height: 30px;
+        font-size: 20px;
+        color: aqua;
+        background: linear-gradient(grey, gray);
+        text-decoration: none;
+        padding: 5px;
+        position: relative;
+      }
+      .container .list a::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-left: 8px solid white;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+      }
+      .container .list .content {
+        overflow: hidden;
+        margin: 2px 0;
+        padding-left: 10px;
+        color: gray;
+        overflow: auto;
+        transition: 0.5s linear;
+        height: 0px;
+      }
+      .container .list:target .content {
+        height: 250px;
+        margin-top: 5px;
+      }
+      .container .list:hover a,
+      .container .list:target a {
+        background: linear-gradient(skyblue, blue);
+        color: white;
+      }
+      .container .list:target a:after {
+        border-left-color: transparent;
+        border-top-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="list" id="brand">
+        <a href="#brand">brand</a>
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis atque
+          sit quos aliquid, saepe laudantium natus neque fuga veniam dignissimos
+          animi, non laboriosam laborum a at quae! A, ratione rem! Lorem ipsum
+          dolor, sit amet consectetur adipisicing elit. Doloremque itaque odit
+          quos placeat? Fugiat facere voluptas expedita, natus mollitia, vero
+          nesciunt laborum temporibus rerum accusamus praesentium ipsa ullam
+          cumque reiciendis. Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Eius libero aut nostrum illum harum ullam magnam, distinctio
+          nisi quidem minima iusto commodi, sapiente, id laboriosam deserunt?
+          Illum, aperiam eius! Necessitatibus! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Provident, dolorum eveniet! Maxime,
+          atque neque? Molestias vitae id optio ut atque assumenda asperiores
+          qui, dolorum magni? Alias obcaecati cupiditate accusamus distinctio?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, eaque
+          fuga modi facere iure cum eum sed quos commodi perspiciatis? Odit
+          beatae iste, blanditiis minima eligendi exercitationem ullam deserunt
+          ratione.
+        </p>
+      </div>
+      <div class="list" id="news">
+        <a href="#news">brand</a>
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis atque
+          sit quos aliquid, saepe laudantium natus neque fuga veniam dignissimos
+          animi, non laboriosam laborum a at quae! A, ratione rem! Lorem ipsum
+          dolor, sit amet consectetur adipisicing elit. Doloremque itaque odit
+          quos placeat? Fugiat facere voluptas expedita, natus mollitia, vero
+          nesciunt laborum temporibus rerum accusamus praesentium ipsa ullam
+          cumque reiciendis. Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Eius libero aut nostrum illum harum ullam magnam, distinctio
+          nisi quidem minima iusto commodi, sapiente, id laboriosam deserunt?
+          Illum, aperiam eius! Necessitatibus! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Provident, dolorum eveniet! Maxime,
+          atque neque? Molestias vitae id optio ut atque assumenda asperiores
+          qui, dolorum magni? Alias obcaecati cupiditate accusamus distinctio?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, eaque
+          fuga modi facere iure cum eum sed quos commodi perspiciatis? Odit
+          beatae iste, blanditiis minima eligendi exercitationem ullam deserunt
+          ratione.
+        </p>
+      </div>
+      <div class="list" id="goods">
+        <a href="#goods">brand</a>
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis atque
+          sit quos aliquid, saepe laudantium natus neque fuga veniam dignissimos
+          animi, non laboriosam laborum a at quae! A, ratione rem! Lorem ipsum
+          dolor, sit amet consectetur adipisicing elit. Doloremque itaque odit
+          quos placeat? Fugiat facere voluptas expedita, natus mollitia, vero
+          nesciunt laborum temporibus rerum accusamus praesentium ipsa ullam
+          cumque reiciendis. Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Eius libero aut nostrum illum harum ullam magnam, distinctio
+          nisi quidem minima iusto commodi, sapiente, id laboriosam deserunt?
+          Illum, aperiam eius! Necessitatibus! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Provident, dolorum eveniet! Maxime,
+          atque neque? Molestias vitae id optio ut atque assumenda asperiores
+          qui, dolorum magni? Alias obcaecati cupiditate accusamus distinctio?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, eaque
+          fuga modi facere iure cum eum sed quos commodi perspiciatis? Odit
+          beatae iste, blanditiis minima eligendi exercitationem ullam deserunt
+          ratione.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
